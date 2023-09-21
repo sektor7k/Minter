@@ -56,19 +56,19 @@ function Footer(props) {
                                         <h6 className="widget-title">SUBSCRIBE</h6>
                                         <ul >
                                             <li><Link to="/">Home</Link></li>
-                                            <li><Link to="/about-v1">About</Link></li>
-                                            <li><Link to="/roadmap-v1">Roadmap</Link></li>
-                                            <li><Link to="/our-team">Our Team</Link></li>
-                                            <li><Link to="/faq-v1">FAQs</Link></li>
+                                            <li><Link to="#">About</Link></li>
+                                            <li><Link to="#">Roadmap</Link></li>
+                                            <li><Link to="#">Our Team</Link></li>
+                                            <li><Link to="#">FAQs</Link></li>
                                         </ul>
                                     </div>
                                     <div className="menu menu-2">
                                         <h6 className="widget-title">COMPANY</h6>
                                         <ul >
-                                            <li><Link to="/about-v2">About Us 2</Link></li>
-                                            <li><Link to="/roadmap-v2">Road Map 2</Link></li>
-                                            <li><Link to="/testimonial">Testimonial</Link></li>
-                                            <li><Link to="/item-details">Item Details</Link></li>
+                                            <li><Link to="#">About Us 2</Link></li>
+                                            <li><Link to="#">Road Map 2</Link></li>
+                                            <li><Link to="#">Testimonial</Link></li>
+                                            <li><Link to="#">Item Details</Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@ function Footer(props) {
                             <div className="col-md-12">
                                 <div className="bottom">
                                    
-                                    <p className="copy-right">BINABOX 2022 - ALL rights reserved</p>
+                                    <p className="copy-right">WEB 3 COMMUNITY 2022 - ALL rights reserved</p>
     
                                     <ul className="social-item">
                                         <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
