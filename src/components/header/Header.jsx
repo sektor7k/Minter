@@ -5,8 +5,30 @@ import './styles.scss';
 import logo from '../../assets/images/logo/logo.png';
 import logodark from '../../assets/images/logo/logo_dark.png';
 import DarkMode from './DarkMode';
+import { useSDK } from '@metamask/sdk-react';
+
+
+
+
+
+
 
 const Header = () => {
+    const [account, setAccount] = useState();
+    const { sdk, connected, connecting, provider, chainId } = useSDK();
+    const [ address, setadress ] = useState();
+    const connect = async () => {
+        try {
+            const accounts = await sdk?.connect();
+            setAccount(accounts?.[0]);
+            setadress(accounts?.[0]);
+        } catch (err) {
+            console.warn(`failed to connect..`, err);
+        }
+    };
+
+
+
     const [scroll, setScroll] = useState(false);
     useEffect(() => {
         const onScroll = () => {
@@ -80,7 +102,11 @@ const Header = () => {
                             <div className="header-right">
                                 <DarkMode />
                                 <Link to="/contact" className="tf-button discord"><i className="icon-fl-vt"></i><span>DISCORD</span></Link>
-                                <Link to="#" className="tf-button connect" data-toggle="modal" data-target="#popup_bid"> <i className="icon-fl-wallet"></i><span>CONNECT</span></Link>
+                                <Link onClick={connect} to="#" className="tf-button connect" data-toggle="modal" data-target="#popup_bid">
+
+                                     <i className="icon-fl-wallet"></i><span>CONNECT</span></Link>
+
+
                                 <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}><span></span></div>
                             </div>
                         </div>
