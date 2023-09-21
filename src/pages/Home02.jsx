@@ -26,12 +26,12 @@ function Home02(props) {
             
             <Work02 data={dataWork} />
 
-            <About2 data={dataAbout} />
+            <About2  id="about" data={dataAbout} />
 
 
             <Collection01 data={dataCollection} />
 
-            <RoadMap2 data={dataRoadmap} />
+            <RoadMap2 id="roadmap" data={dataRoadmap} />
 
 
             <Team data={dataTeam} />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import menus from '../../pages/menu';
 import './styles.scss';
 import logo from '../../assets/images/logo/logo.png';
@@ -7,27 +7,33 @@ import logodark from '../../assets/images/logo/logo_dark.png';
 import DarkMode from './DarkMode';
 import { useSDK } from '@metamask/sdk-react';
 
-
-
-
-
-
-
 const Header = () => {
     const [account, setAccount] = useState();
     const { sdk, connected, connecting, provider, chainId } = useSDK();
-    const [ address, setadress ] = useState();
+    const [address, setAddress] = useState();
+    const [isConnected, setIsConnected] = useState(false);
+
     const connect = async () => {
         try {
             const accounts = await sdk?.connect();
-            setAccount(accounts?.[0]);
-            setadress(accounts?.[0]);
+            if (accounts?.[0]) {
+                setAccount(accounts[0]);
+                setAddress(accounts[0]);
+                setIsConnected(true);
+            }
         } catch (err) {
-            console.warn(`failed to connect..`, err);
+            console.warn(`Bağlantı başarısız oldu..`, err);
         }
     };
 
-
+    const disconnect = async () => {
+        try {
+            sdk?.disconnect();
+            setIsConnected(false);
+        } catch (err) {
+            console.warn(`Bağlantıyı kesme başarısız oldu..`, err);
+        }
+    };
 
     const [scroll, setScroll] = useState(false);
     useEffect(() => {
@@ -78,23 +84,24 @@ const Header = () => {
                             <div className="header-center">
                                 <nav id="main-nav" className={`main-nav ${menuActive ? 'active' : ''}`}>
                                     <ul id="menu-primary-menu" className="menu">
-                                        {
-                                            menus.map((data, idx) => (
-                                                <li key={idx} onClick={() => handleDropdown(idx)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === idx ? 'active' : ''}`}>
-                                                    <Link to={data.links} onClick={() => handleMenuClick(data.links)}>{data.name}</Link>
-                                                    {
-                                                        data.namesub &&
-                                                        <ul className="sub-menu">
-                                                            {
-                                                                data.namesub.map((submenu) => (
-                                                                    <li key={submenu.id} className="menu-item"><NavLink to={submenu.links} onClick={() => handleMenuClick(submenu.links)}>{submenu.sub}</NavLink></li>
-                                                                ))
-                                                            }
-                                                        </ul>
-                                                    }
-                                                </li>
-                                            ))
-                                        }
+                                        <li><Link to="/">Home</Link></li>
+                                        <li><Link to="#about">About</Link></li>
+                                        <li><Link to="#roadmap">Road Map</Link></li>
+                                        {menus.map((data, idx) => (
+                                            <li key={idx} onClick={() => handleDropdown(idx)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === idx ? 'active' : ''}`}>
+                                                <Link to={data.links} onClick={() => handleMenuClick(data.links)}>{data.name}</Link>
+                                                {data.namesub && (
+                                                    <ul className="sub-menu">
+                                                        {data.namesub.map((submenu) => (
+                                                            <li key={submenu.id} className="menu-item">
+                                                                <Link to={submenu.links} onClick={() => handleMenuClick(submenu.links)}>{submenu.sub}</Link>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                            </li>
+                                        ))}
+                                        <li><Link to="/">Contact</Link></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -102,11 +109,11 @@ const Header = () => {
                             <div className="header-right">
                                 <DarkMode />
                                 <Link to="/contact" className="tf-button discord"><i className="icon-fl-vt"></i><span>DISCORD</span></Link>
-                                <Link onClick={connect} to="#" className="tf-button connect" data-toggle="modal" data-target="#popup_bid">
-
-                                     <i className="icon-fl-wallet"></i><span>CONNECT</span></Link>
-
-
+                                {isConnected ? (
+                                    <button onClick={disconnect} className="tf-button connect"><i className="icon-fl-wallet"></i><span>{address.substring(0, 4)+".."+address.substring(address.length - 3, address.length)}</span></button>
+                                ) : (
+                                    <Link onClick={connect} to="#" className="tf-button connect" data-toggle="modal" data-target="#popup_bid"><i className="icon-fl-wallet"></i><span>CONNECT</span></Link>
+                                )}
                                 <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}><span></span></div>
                             </div>
                         </div>

@@ -1,22 +1,5 @@
 const menus = [ 
-    {
-        id: 1,
-        name: 'Home',
-        links: '/',
-        
-    },
-    {
-        id: 2,
-        name: 'About',
-        links: '/#About',
-        
-    },
-    {
-        id: 4,
-        name: 'Road Map',
-        links: '/#RoadMap',
-         
-    },
+    
     {
         id: 5,
         name: 'Pages',
@@ -37,11 +20,7 @@ const menus = [
     },
     
 
-    {
-        id: 7,
-        name: 'Contact',
-        links: '/contact',
-    },
+    
     
 ]
 
