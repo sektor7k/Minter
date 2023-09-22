@@ -35,7 +35,7 @@ function Banner03(props) {
                                                         <h1 className="heading mb0">WITH</h1>
                                                         <div className="animate-contain">
                                                             <div className="animated-text">
-                                                                <span>Binabox</span>
+                                                                <span></span>
                                                                 <span>Music</span>
                                                                 <span>NFT</span>
                                                             </div>
