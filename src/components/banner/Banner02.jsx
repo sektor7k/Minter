@@ -18,7 +18,7 @@ function Banner02(props) {
 
                             <div className="content-inner wow fadeInUp" data-wow-delay="0.4s">
                                 
-                                <h1 className="heading">EXPLORE NFT COLLECTION</h1>
+                                <h1 className="heading">WEB 3 COMMUNITY</h1>
                                 <p className="sub-heading wow fadeInUp" data-wow-delay="0.6s">We are the best way to check the rarity of NFT collection</p>
                                 <div className="btn-slider wow fadeInUp" data-wow-delay="0.8s">
                                     <Button02 title='WHITELIST NOW' path='#' />
