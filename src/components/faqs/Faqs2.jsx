@@ -12,7 +12,7 @@ function Faqs2(props) {
 
     const {data} = props;
     return (
-        <section className="tf-faq tf-section">
+        <section className="tf-faq tf-section" id='faqs'>
                 <div className="tf-container">
                     <div className="col-md-12 ">
                         <div className="tf-heading mb60 wow fadeInUp">

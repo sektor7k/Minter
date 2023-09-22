@@ -26,7 +26,7 @@ function Home02(props) {
             
             <Work02 data={dataWork} />
 
-            <About2  id="about" data={dataAbout} />
+            <About2 data={dataAbout} />
 
 
             <Collection01 data={dataCollection} />

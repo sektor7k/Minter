@@ -8,7 +8,7 @@ RoadMap2.propTypes = {
 function RoadMap2(props) {
     const {data} = props;
     return (
-        <section className="tf-section section-roadmap2">
+        <section className="tf-section section-roadmap2"id='roadmap'>
               
             <div className="tf-heading  mb87 wow fadeInUp">
                 <h2 className="heading">ROAD MAP</h2>

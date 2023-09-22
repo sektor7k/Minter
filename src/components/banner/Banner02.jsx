@@ -15,7 +15,6 @@ function Banner02(props) {
                                     </h1>
                                     <p className="sub-heading wow fadeInUp" data-wow-delay="0.6s">We are the best way to check the rarity of NFT collection</p>
                                     <div className="btn-slider wow fadeInUp" data-wow-delay="0.8s">
-                                        <Button title='CONNECT WALLET' path='#' />
                                         <Button02 title='WHITELIST NOW' path='#' />
                                     </div>
                                 </div>

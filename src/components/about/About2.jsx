@@ -10,7 +10,7 @@ About2.propTypes = {
 function About2(props) {
     const {data} = props;
     return (
-        <section className="tf-section tf-about style-2">
+        <section className="tf-section tf-about style-2" id="about">
             <div className="icon">
                 <svg width="208" height="208" viewBox="0 0 208 208" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_f_2337_5328)">
