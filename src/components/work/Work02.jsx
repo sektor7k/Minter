@@ -14,7 +14,7 @@ function Work02(props) {
                     <div className="row">   
                         <div className="col-md-12">
                             <div className="title-ss wow fadeInUp">
-                                <h3>HOW TO <span>BINABOX</span> WORK</h3>
+                                <h3>HOW TO <span>WEB 3 COMMUNITY</span> WORK</h3>
                             </div>
                         </div>
                         {
