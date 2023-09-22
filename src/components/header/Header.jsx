@@ -6,7 +6,7 @@ import logo from '../../assets/images/logo/logo.png';
 import logodark from '../../assets/images/logo/logo_dark.png';
 import DarkMode from './DarkMode';
 import { useSDK } from '@metamask/sdk-react';
-// import { Link as ScrollLink } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 
 
 
@@ -88,10 +88,10 @@ const Header = () => {
                                 <nav id="main-nav" className={`main-nav ${menuActive ? 'active' : ''}`}>
                                     <ul id="menu-primary-menu" className="menu">
                                         <li><Link to="/">Home</Link></li>
-                                        {/* <li><ScrollLink to="about" smooth={true} >About</ScrollLink></li>
-                                        <li><ScrollLink to="roadmap" smooth={true}>Road Map</ScrollLink></li> */}
-                                        <li><Link to="#about">About</Link></li>
-                                        <li><Link to="#roadmap">Road Map</Link></li>
+                                        <li><ScrollLink to="about" smooth={true} >About</ScrollLink></li>
+                                        <li><ScrollLink to="roadmap" smooth={true}>Road Map</ScrollLink></li>
+                                        {/* <li><Link to="#about">About</Link></li>
+                                        <li><Link to="#roadmap">Road Map</Link></li> */}
 
                                         {menus.map((data, idx) => (
                                             <li key={idx} onClick={() => handleDropdown(idx)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === idx ? 'active' : ''}`}>
